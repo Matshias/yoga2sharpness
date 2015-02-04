@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="utf-8"?>
+<PreferenceScreen xmlns:android="http://schemas.android.com/apk/res/android">
+
+    <PreferenceCategory
+        android:title="@string/feature_preferences">
+
+        <SwitchPreference
+            android:key="disableCABC"
+            android:defaultValue="true"
+            android:title="@string/title_switchCABC_preference"
+            android:summary="@string/summary_switchCABC_preference" />
+        <SwitchPreference
+            android:key="disablePFIT"
+            android:defaultValue="true"
+            android:title="@string/title_switchPFIT_preference"
+            android:summary="@string/summary_switchPFIT_preference" />
+
+    </PreferenceCategory>
+
+    <PreferenceCategory
+        android:title="@string/start_based_preferences">
+
+        <CheckBoxPreference
+            android:key="checkDisplayOn"
+            android:defaultValue="true"
+            android:title="@string/title_check_display_on_preference"
+            android:summary="@string/summary_check_display_on_preference"
+            />
+
+        <CheckBoxPreference
+            android:key="checkStartOnBoot"
+            android:title="@string/title_check_start_boot_preference"
+            android:summary="@string/summary_check_start_boot_preference"/>
+    </PreferenceCategory>
+
+
+</PreferenceScreen>
