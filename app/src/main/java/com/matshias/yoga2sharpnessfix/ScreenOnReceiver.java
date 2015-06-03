@@ -6,6 +6,7 @@ import android.content.Intent;
 import android.content.SharedPreferences;
 import android.os.PowerManager;
 import android.preference.PreferenceManager;
+import android.util.Log;
 
 public class ScreenOnReceiver extends BroadcastReceiver {
     public ScreenOnReceiver() {
@@ -13,6 +14,8 @@ public class ScreenOnReceiver extends BroadcastReceiver {
 
     @Override
     public void onReceive(Context context, Intent intent) {
+        Log.v("Y2S", "receive broadcast " + intent.getAction());
+
         if (intent.getAction().equals(Intent.ACTION_SCREEN_ON)) {
 
             SharedPreferences settings = PreferenceManager.getDefaultSharedPreferences(context);

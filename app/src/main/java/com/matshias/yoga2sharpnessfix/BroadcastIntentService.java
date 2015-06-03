@@ -106,23 +106,24 @@ public class BroadcastIntentService extends IntentService {
     }
 
     private void handleActionCABC(boolean disable) {
-        String cmd;
+        String cmd, cmd2;
         List<String> suResult;
         boolean suAvailable;
 
         if (disable) {
-            cmd = "echo 0 > /sys/lcd_panel/cabc_onoff";
+            cmd = "echo 1 > /sys/lcd_panel/dpst_onoff";
         } else {
-            cmd = "echo 1 > /sys/lcd_panel/cabc_onoff";
+            cmd = "echo 0 > /sys/lcd_panel/dpst_onoff";
         }
+
+        cmd2 = "find /sys/devices -name \"dpst_onoff\" -exec chmod 400 {} \\;";
 
         suAvailable = Shell.SU.available();
         if (suAvailable) {
             //suVersion = Shell.SU.version(false);
             //suVersionInternal = Shell.SU.version(true);
             suResult = Shell.SU.run(new String[]{
-                    cmd,
-
+                    cmd, cmd2
             });
         }
 
