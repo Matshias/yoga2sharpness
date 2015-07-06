@@ -6,7 +6,7 @@
     <string name="start_based_preferences">Startup</string>
     <string name="title_switchCABC_preference">Switch off sharpen filter and CABC</string>
     <string name="summary_switchCABC_preference">requires ROOT, may decrease battery life</string>
-    <string name="title_switchPFIT_preference">Switch off blur filter</string>
+    <string name="title_switchPFIT_preference">Switch off blur filter (KitKat only)</string>
     <string name="summary_switchPFIT_preference">May apply only after display on/off cycle</string>
     <string name="title_check_display_on_preference">Apply filter settings when display is switched on</string>
     <string name="summary_check_display_on_preference">The filters will be reset to default after display off</string>

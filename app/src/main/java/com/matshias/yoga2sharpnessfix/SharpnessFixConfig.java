@@ -8,6 +8,7 @@ import android.content.SharedPreferences;
 import android.content.pm.PackageManager;
 import android.graphics.drawable.ColorDrawable;
 import android.os.IBinder;
+import android.preference.Preference;
 import android.preference.PreferenceFragment;
 import android.preference.PreferenceManager;
 import android.support.v7.app.ActionBarActivity;
@@ -107,6 +108,7 @@ public class SharpnessFixConfig extends ActionBarActivity implements SharedPrefe
         android.support.v7.app.ActionBar actionBar = getSupportActionBar();
         actionBar.setBackgroundDrawable(new ColorDrawable(0xFF0040E0));
 
+
         enableBootReceiver();
 
         SharedPreferences settings = PreferenceManager.getDefaultSharedPreferences(this);
@@ -147,6 +149,15 @@ public class SharpnessFixConfig extends ActionBarActivity implements SharedPrefe
 
             // Load the preferences from an XML resource
             addPreferencesFromResource(R.xml.preference);
+
+            if (android.os.Build.VERSION.SDK_INT >= 20) {
+                Preference pr = findPreference("disablePFIT");
+
+                if (pr != null) {
+                    pr.setEnabled(false);
+                    pr.setSelectable(false);
+                }
+            }
         }
 
     }
